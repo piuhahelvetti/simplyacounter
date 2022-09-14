@@ -1,0 +1,79 @@
+body {
+    background-color: #202020;
+    color: whitesmoke;
+    text-align: center;
+}
+
+h1 {
+    font-family: Helvetica;
+    font-size: 72px;
+    margin: 2px;
+}
+
+#count {
+    margin: 2px;
+    font-size: 96px;
+    font-family: Helvetica;
+}
+
+.plusMinusOne {
+    margin-bottom: 20px;
+}
+
+.plusMinusFive {
+    margin-bottom: 20px;
+}
+
+#plusone{
+    text-align: center;
+    font-size: 96px;
+    width: 100px;
+    height: 100px;
+}
+
+#minusone{
+    text-align: center;
+    font-size: 96px;
+    width: 100px;
+    height: 100px;
+    margin-left: 1px;
+}
+
+
+#plusfive{
+    text-align: center;
+    font-size: 72px;
+    width: 90px;
+    height: 80px;
+}
+
+#minusfive{
+    text-align: center;
+    font-size: 72px;
+    width: 90px;
+    height: 80px;
+    margin-left: 1px;
+}
+
+#plusten{
+    text-align: center;
+    font-size: 48px;
+    width: 100px;
+    height: 80px;
+}
+
+#minusten{
+    text-align: center;
+    font-size: 48px;
+    width: 100px;
+    height: 80px;
+    margin-left:1px ;
+}
+
+#reset {
+    margin-top:5px ;
+    text-align: center;
+    font-size: 32px;
+    width: 100px;
+    height: 40px;
+}
