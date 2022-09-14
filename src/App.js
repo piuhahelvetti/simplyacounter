@@ -29,13 +29,15 @@ export default function App() {
     setCount(count -10);
   }//minusTen
 
+  
   function reset(){
-    var ConfirmReset = confirm ("Are you sure you want to reset the counter?");
-    if (ConfirmReset == true) {
-    setCount(0);
-    } else {
-      setCount(count);
-  }//reset(else)
+    const confirmReset = window.confirm("Are you sure you want to reset the counter?");
+      if(confirmReset === true){
+        setCount(0);
+      } else {
+        setCount(count);
+      }
+    
   }//reset
 
   return (
