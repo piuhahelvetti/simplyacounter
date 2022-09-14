@@ -5,6 +5,11 @@ export default function App() {
 
   const [count, setCount] = useState(0);
 
+  window.onbeforeunload = function(event)
+{
+    return window.confirm("Confirm refresh");
+};
+
   function plusOne(){
     setCount(count + 1);
   } //plusOne
@@ -31,21 +36,35 @@ export default function App() {
 
   
   function reset(){
+    
+    if (count !== 0){
     const confirmReset = window.confirm("Are you sure you want to reset the counter?");
       if(confirmReset === true){
         setCount(0);
       } else {
         setCount(count);
-      }
-    
-  }//reset
+      }//setcount else
+    }
+}//reset
+
+function setCustomAmount (){
+ const rawCustomStart = prompt("Set a starting point");
+ const customStart = parseInt(rawCustomStart);
+
+ if(isNaN(customStart)) {
+  setCount(0);
+ } else {
+  setCount(customStart);
+ }
+ 
+}//setCustomAmount
 
   return (
     <div className="App">
       <h1>Counter</h1>
 
-      <h2 id="count">{count}</h2>
-    
+     <h2 id="count">{count}</h2>
+        
     <div className='plusMinusOne'>
 
       <button id="plusone" onClick={plusOne}>+</button>
@@ -67,7 +86,9 @@ export default function App() {
       <button id="minusten" onClick={minusTen}>-10</button>
     </div>
 
-      <button id="reset" onClick={reset}>Reset</button>
+      <button id="reset" onClick={reset}>Reset</button> <br/> <br/>
+
+      <button id="customstart" onClick={setCustomAmount}>Set Custom Starting Amount</button>
 
     </div>
   );// return
