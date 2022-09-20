@@ -5,17 +5,21 @@ export default function App() {
 
   const [count, setCount] = useState(0);
 
+  const [step, setStep] = useState(1);
+
+  const [stepform, setStepForm] = useState(false);
+
   window.onbeforeunload = function(event)
 {
     return window.confirm("Confirm refresh");
 };
 
-  function plusOne(){
-    setCount(count + 1);
+  function plus(){
+    setCount(count + step);
   } //plusOne
 
-  function minusOne (){
-    setCount (count - 1);  
+  function minus (){
+    setCount (count - step);  
   } //plusOne
 
   function plusFive (){
@@ -56,8 +60,23 @@ function setCustomAmount (){
  } else {
   setCount(customStart);
  }
- 
 }//setCustomAmount
+
+function customSTepFormCheck(){
+
+  if(stepform === true){
+    return(
+      <div className="customStepForm">
+      <form onSubmit={handleSetCustomStep}>
+        <label>Enter desired step amount:</label>
+        <input
+        type="number"
+        />
+      </form>
+    </div>
+    );
+  }//if(stepform)
+  }// customSTepFormCheck
 
   return (
     <div className="App">
@@ -67,9 +86,9 @@ function setCustomAmount (){
         
     <div className='plusMinusOne'>
 
-      <button id="plusone" onClick={plusOne}>+</button>
+      <button id="plusone" onClick={plus}>+</button>
 
-      <button id="minusone" onClick={minusOne}>-</button> <br/>
+      <button id="minusone" onClick={minus}>-</button> <br/>
 
     </div>
 
@@ -90,6 +109,19 @@ function setCustomAmount (){
 
       <button id="customstart" onClick={setCustomAmount}>Set Custom Starting Amount</button>
 
+      <button onClick={
+      setStepForm(true)}>
+      Set custom step amount
+      </button>
+
     </div>
   );// return
+
+  customSTepFormCheck();
+
+  function handleSetCustomStep(event){
+    setStep(event.target.value);
+    setStepForm(false);
+   }
+
 }//App
