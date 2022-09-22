@@ -7,7 +7,6 @@ export default function App() {
 
   const [step, setStep] = useState(1);
 
-  const [stepform, setStepForm] = useState(false);
 
   window.onbeforeunload = function(event)
 {
@@ -62,21 +61,14 @@ function setCustomAmount (){
  }
 }//setCustomAmount
 
-function customSTepFormCheck(){
-
-  if(stepform === true){
-    return(
-      <div className="customStepForm">
-      <form onSubmit={handleSetCustomStep}>
-        <label>Enter desired step amount:</label>
-        <input
-        type="number"
-        />
-      </form>
-    </div>
-    );
-  }//if(stepform)
-  }// customSTepFormCheck
+function setStepPrompt(){
+ let customStepInput = Number(prompt("Enter desired step amount"));
+if(isNaN(customStepInput)){
+   setStep(customStepInput);
+  } else {
+    setStep(1);
+  }
+}
 
   return (
     <div className="App">
@@ -105,23 +97,15 @@ function customSTepFormCheck(){
       <button id="minusten" onClick={minusTen}>-10</button>
     </div>
 
-      <button id="reset" onClick={reset}>Reset</button> <br/> <br/>
+      <button id="reset" onClick={reset}>Reset</button> <br/> 
 
-      <button id="customstart" onClick={setCustomAmount}>Set Custom Starting Amount</button>
+      <button id="customstart" onClick={setCustomAmount}>Set Custom Starting Amount</button> <br/>
 
-      <button onClick={
-      setStepForm(true)}>
+      <button onClick={setStepPrompt}>
       Set custom step amount
       </button>
 
     </div>
   );// return
-
-  customSTepFormCheck();
-
-  function handleSetCustomStep(event){
-    setStep(event.target.value);
-    setStepForm(false);
-   }
 
 }//App
