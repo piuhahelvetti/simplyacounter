@@ -33,6 +33,9 @@ h1 {
     font-size: 96px;
     width: 100px;
     height: 100px;
+    border: none;
+    background-color: #202020;
+    color: white;
 }
 
 #minusone{
@@ -41,6 +44,10 @@ h1 {
     width: 100px;
     height: 100px;
     margin-left: 1px;
+    border: none;
+    background-color: #202020;
+    color: white;
+    
 }
 
 
@@ -49,6 +56,9 @@ h1 {
     font-size: 72px;
     width: 90px;
     height: 80px;
+    border: none;
+    background-color: #202020;
+    color: white;
 }
 
 #minusfive{
@@ -57,6 +67,9 @@ h1 {
     width: 90px;
     height: 80px;
     margin-left: 1px;
+    border: none;
+    background-color: #202020;
+    color: white;
 }
 
 #plusten{
@@ -64,6 +77,9 @@ h1 {
     font-size: 48px;
     width: 100px;
     height: 80px;
+    border: none;
+    background-color: #202020;
+    color: white;
 }
 
 #minusten{
@@ -71,15 +87,18 @@ h1 {
     font-size: 48px;
     width: 100px;
     height: 80px;
-    margin-left:1px ;
+    margin-left:1px;
+    border: none;
+    background-color: #202020;
+    color: white;
 }
 
 #reset {
     margin-top:5px ;
     text-align: center;
-    font-size: 32px;
-    width: 100px;
-    height: 40px;
+    font-size: 26px;
+    width: 85px;
+    height: 30px;
 }
 
 #sourcecodelink{

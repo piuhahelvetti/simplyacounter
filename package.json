@@ -38,7 +38,6 @@
   },
   "description": "A simple counter using the state React-hook.",
   "main": "index.js",
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://gitlab.com/sapphiresscarlett/counter.git"
