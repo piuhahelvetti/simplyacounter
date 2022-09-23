@@ -5,17 +5,22 @@ export default function App() {
 
   const [count, setCount] = useState(0);
 
+  const [plusStep, setPlusStep] = useState(1);
+
+  const [minusStep, setMinusStep] = useState(1);
+
+
   window.onbeforeunload = function(event)
 {
     return window.confirm("Confirm refresh");
 };
 
-  function plusOne(){
-    setCount(count + 1);
+  function plus(){
+    setCount(count + plusStep);
   } //plusOne
 
-  function minusOne (){
-    setCount (count - 1);  
+  function minus (){
+    setCount (count - minusStep);  
   } //plusOne
 
   function plusFive (){
@@ -56,8 +61,25 @@ function setCustomAmount (){
  } else {
   setCount(customStart);
  }
- 
 }//setCustomAmount
+
+function setPlusStepPrompt(){
+ let customPlusStepInput = Number(prompt("Enter desired + step amount"));
+ if(!isNaN(customPlusStepInput)){
+ setPlusStep(customPlusStepInput);
+} else{
+  setPlusStep(1);
+}//setPlusStepPrompt.else
+}//setPlusStepPrompt
+
+function setMinusStepPrompt(){
+  let customMinusStepInput = Number(prompt("Enter desired - step amount"));
+  if(!isNaN(customMinusStepInput)){
+  setMinusStep(customMinusStepInput);
+ } else{
+   setMinusStep(1);
+ }//setPlusStepPrompt.else
+ }//setPlusStepPrompt
 
   return (
     <div className="App">
@@ -67,9 +89,9 @@ function setCustomAmount (){
         
     <div className='plusMinusOne'>
 
-      <button id="plusone" onClick={plusOne}>+</button>
+      <button id="plusone" onClick={plus}>+</button>
 
-      <button id="minusone" onClick={minusOne}>-</button> <br/>
+      <button id="minusone" onClick={minus}>-</button> <br/>
 
     </div>
 
@@ -86,7 +108,7 @@ function setCustomAmount (){
       <button id="minusten" onClick={minusTen}>-10</button>
     </div>
 
-      <button id="reset" onClick={reset}>Reset</button> <br/> <br/>
+      <button id="reset" onClick={reset}>Reset</button> <br/> 
 
       <button id="customstart" onClick={setCustomAmount}>Set Custom Starting Amount</button> <br />
 
@@ -97,6 +119,14 @@ function setCustomAmount (){
         Source code <br />
         (GitHub)
       </a>
+
+      <button onClick={setPlusStepPrompt}>
+      Set custom + step amount
+      </button>
+
+      <button onClick={setMinusStepPrompt}>
+      Set custom - step amount
+      </button>
 
     </div>
   );// return
