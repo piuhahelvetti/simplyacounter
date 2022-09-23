@@ -5,7 +5,9 @@ export default function App() {
 
   const [count, setCount] = useState(0);
 
-  const [step, setStep] = useState(1);
+  const [plusStep, setPlusStep] = useState(1);
+
+  const [minusStep, setMinusStep] = useState(1);
 
 
   window.onbeforeunload = function(event)
@@ -14,11 +16,11 @@ export default function App() {
 };
 
   function plus(){
-    setCount(count + step);
+    setCount(count + plusStep);
   } //plusOne
 
   function minus (){
-    setCount (count - step);  
+    setCount (count - minusStep);  
   } //plusOne
 
   function plusFive (){
@@ -61,14 +63,23 @@ function setCustomAmount (){
  }
 }//setCustomAmount
 
-function setStepPrompt(){
- let customStepInput = Number(prompt("Enter desired step amount"));
-if(isNaN(customStepInput)){
-   setStep(customStepInput);
-  } else {
-    setStep(1);
-  }
-}
+function setPlusStepPrompt(){
+ let customPlusStepInput = Number(prompt("Enter desired + step amount"));
+ if(!isNaN(customPlusStepInput)){
+ setPlusStep(customPlusStepInput);
+} else{
+  setPlusStep(1);
+}//setPlusStepPrompt.else
+}//setPlusStepPrompt
+
+function setMinusStepPrompt(){
+  let customMinusStepInput = Number(prompt("Enter desired - step amount"));
+  if(!isNaN(customMinusStepInput)){
+  setMinusStep(customMinusStepInput);
+ } else{
+   setMinusStep(1);
+ }//setPlusStepPrompt.else
+ }//setPlusStepPrompt
 
   return (
     <div className="App">
@@ -101,11 +112,14 @@ if(isNaN(customStepInput)){
 
       <button id="customstart" onClick={setCustomAmount}>Set Custom Starting Amount</button> <br/>
 
-      <button onClick={setStepPrompt}>
-      Set custom step amount
+      <button onClick={setPlusStepPrompt}>
+      Set custom + step amount
+      </button>
+
+      <button onClick={setMinusStepPrompt}>
+      Set custom - step amount
       </button>
 
     </div>
   );// return
-
 }//App
