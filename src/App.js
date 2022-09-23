@@ -118,7 +118,7 @@ function setMinusStepPrompt(){
 
       <button onClick={setMinusStepPrompt}>
       Set custom - step amount
-      </button>
+      </button> <br />
 
       <a id="sourcecodelink"
       href="https://github.com/sapphirescarlett/simplyacounter"
