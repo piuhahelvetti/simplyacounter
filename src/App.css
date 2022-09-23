@@ -1,3 +1,7 @@
+:root{
+    --hover-color: #E8A9FF;
+}
+
 body {
     background-color: #202020;
     color: whitesmoke;
@@ -78,3 +82,13 @@ h1 {
     height: 40px;
 }
 
+#sourcecodelink{
+    margin-top: 24px;
+    text-decoration: underline;
+    color: whitesmoke;
+}
+
+#sourcecodelink:hover{
+    text-decoration: underline;
+    color:var(--hover-color);
+}

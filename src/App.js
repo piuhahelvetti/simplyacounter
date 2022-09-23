@@ -110,7 +110,15 @@ function setMinusStepPrompt(){
 
       <button id="reset" onClick={reset}>Reset</button> <br/> 
 
-      <button id="customstart" onClick={setCustomAmount}>Set Custom Starting Amount</button> <br/>
+      <button id="customstart" onClick={setCustomAmount}>Set Custom Starting Amount</button> <br />
+
+      <a id="sourcecodelink"
+      href="https://github.com/sapphirescarlett/simplyacounter"
+      target="__blank"
+      >
+        Source code <br />
+        (GitHub)
+      </a>
 
       <button onClick={setPlusStepPrompt}>
       Set custom + step amount
