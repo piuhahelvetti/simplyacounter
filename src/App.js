@@ -53,14 +53,18 @@ export default function App() {
 }//reset
 
 function setCustomAmount (){
+
  const rawCustomStart = prompt("Set a starting point");
  const customStart = parseInt(rawCustomStart);
+ console.log("Custom starting value entered:"+ customStart);
 
- if(isNaN(customStart)) {
-  setCount(0);
- } else {
+if(isNaN(customStart)){
+  console.log("ERROR: Please enter a number")
+} else{
   setCount(customStart);
- }
+  console.log("Custom starting point set. Counter value is now "+customStart);
+}
+ 
 }//setCustomAmount
 
 function setPlusStepPrompt(){
