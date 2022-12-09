@@ -17,26 +17,32 @@ export default function App() {
 
   function plus(){
     setCount(count + plusStep);
+    console.log("Added"+ plusStep);
   } //plusOne
 
   function minus (){
     setCount (count - minusStep);  
+    console.log("Substracted"+ minusStep);
   } //plusOne
 
   function plusFive (){
     setCount(count + 5);
+    console.log("Added 5")
   } //plusFive
 
   function minusFive (){
     setCount(count -5);
+    console.log("Substracted 5")
   } //plusFive
 
   function plusTen(){
     setCount(count +10);
+    console.log("Added 10")
   } //plusFiTen
 
   function minusTen(){
     setCount(count -10);
+    console.log("Added 10")
   }//minusTen
 
   
@@ -46,6 +52,7 @@ export default function App() {
     const confirmReset = window.confirm("Are you sure you want to reset the counter?");
       if(confirmReset === true){
         setCount(0);
+        console.log("Counter has been reset")
       } else {
         setCount(count);
       }//setcount else
@@ -71,6 +78,7 @@ function setPlusStepPrompt(){
  let customPlusStepInput = Number(prompt("Enter desired + step amount"));
  if(!isNaN(customPlusStepInput)){
  setPlusStep(customPlusStepInput);
+ console.log("Plus step set to "+ plusStep)
 } else{
   setPlusStep(1);
 }//setPlusStepPrompt.else
@@ -80,6 +88,7 @@ function setMinusStepPrompt(){
   let customMinusStepInput = Number(prompt("Enter desired - step amount"));
   if(!isNaN(customMinusStepInput)){
   setMinusStep(customMinusStepInput);
+  console.log("Minus step set to "+minusStep)
  } else{
    setMinusStep(1);
  }//setPlusStepPrompt.else
