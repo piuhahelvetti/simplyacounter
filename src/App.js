@@ -102,23 +102,23 @@ function setMinusStepPrompt(){
         
     <div className='plusMinusOne'>
 
-      <button id="plusone" onClick={plus}>+</button>
+      <button id="plusone" className="counterButton" onClick={plus}>+</button>
 
-      <button id="minusone" onClick={minus}>-</button> <br/>
+      <button id="minusone" className="counterButton" onClick={minus}>-</button> <br/>
 
     </div>
 
     <div className='plusMinusFive'>
 
-      <button id="plusfive" onClick={plusFive}>+5</button>  
-
-      <button id="minusfive" onClick={minusFive}>-5</button>    
+      <button id="plusfive" className="counterButton" onClick={plusFive}>+5</button>  
+ 
+      <button id="minusfive" className="counterButton" onClick={minusFive}>-5</button>    
 
     </div>
 
     <div className="plusMinusTen">
-      <button id="plusten" onClick={plusTen}>+10</button>
-      <button id="minusten" onClick={minusTen}>-10</button>
+      <button id="plusten" className="counterButton" onClick={plusTen}>+10</button>
+      <button id="minusten" className="counterButton" onClick={minusTen}>-10</button>
     </div>
 
       <button id="reset" onClick={reset}>Reset</button> <br/> 
