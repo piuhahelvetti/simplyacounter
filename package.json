@@ -51,5 +51,8 @@
   "license": "SEE LICENSE IN LICENSE.md",
   "bugs": {
     "url": "https://gitlab.com/sapphiresscarlett/counter/issues"
+  },
+  "devDependencies": {
+    "prettier": "^2.8.2"
   }
 }

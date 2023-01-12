@@ -1,122 +1,120 @@
-:root{
-    --hover-color: #E8A9FF;
+:root {
+	--hover-color: #e8a9ff;
 }
 
 body {
-    background-color: #202020;
-    color: whitesmoke;
-    text-align: center;
+	background-color: #202020;
+	color: whitesmoke;
+	text-align: center;
 }
 
 h1 {
-    font-family: Helvetica;
-    font-size: 72px;
-    margin: 2px;
+	font-family: Helvetica;
+	font-size: 72px;
+	margin: 2px;
 }
 
 #count {
-    margin: 2px;
-    font-size: 96px;
-    font-family: Helvetica;
+	margin: 2px;
+	font-size: 96px;
+	font-family: Helvetica;
 }
 
 .plusMinusOne {
-    margin-bottom: 20px;
+	margin-bottom: 20px;
 }
 
 .plusMinusFive {
-    margin-bottom: 20px;
+	margin-bottom: 20px;
 }
 
-#plusone{
-    text-align: center;
-    font-size: 96px;
-    width: 100px;
-    height: 100px;
-    border: none;
-    background-color: #202020;
-    color: white;
-    text-shadow: #C4ACC9 1px 0 8px;
+#plusone {
+	text-align: center;
+	font-size: 96px;
+	width: 100px;
+	height: 100px;
+	border: none;
+	background-color: #202020;
+	color: white;
+	text-shadow: #c4acc9 1px 0 8px;
 }
 
-#minusone{
-    text-align: center;
-    font-size: 96px;
-    width: 100px;
-    height: 100px;
-    margin-left: 1px;
-    border: none;
-    background-color: #202020;
-    color: white;
-    text-shadow: #C4ACC9 1px 0 8px;
+#minusone {
+	text-align: center;
+	font-size: 96px;
+	width: 100px;
+	height: 100px;
+	margin-left: 1px;
+	border: none;
+	background-color: #202020;
+	color: white;
+	text-shadow: #c4acc9 1px 0 8px;
 }
 
-
-#plusfive{
-    text-align: center;
-    font-size: 72px;
-    width: 90px;
-    height: 80px;
-    border: none;
-    background-color: #202020;
-    color: white;
-    text-shadow: #C4ACC9 1px 0 8px;
+#plusfive {
+	text-align: center;
+	font-size: 72px;
+	width: 90px;
+	height: 80px;
+	border: none;
+	background-color: #202020;
+	color: white;
+	text-shadow: #c4acc9 1px 0 8px;
 }
 
-#minusfive{
-    text-align: center;
-    font-size: 72px;
-    width: 90px;
-    height: 80px;
-    margin-left: 1px;
-    border: none;
-    background-color: #202020;
-    color: white;
-    text-shadow: #C4ACC9 1px 0 8px;
+#minusfive {
+	text-align: center;
+	font-size: 72px;
+	width: 90px;
+	height: 80px;
+	margin-left: 1px;
+	border: none;
+	background-color: #202020;
+	color: white;
+	text-shadow: #c4acc9 1px 0 8px;
 }
 
-#plusten{
-    text-align: center;
-    font-size: 48px;
-    width: 100px;
-    height: 80px;
-    border: none;
-    background-color: #202020;
-    color: white;
-    text-shadow: #C4ACC9 1px 0 8px;
+#plusten {
+	text-align: center;
+	font-size: 48px;
+	width: 100px;
+	height: 80px;
+	border: none;
+	background-color: #202020;
+	color: white;
+	text-shadow: #c4acc9 1px 0 8px;
 }
 
-#minusten{
-    text-align: center;
-    font-size: 48px;
-    width: 100px;
-    height: 80px;
-    margin-left:1px;
-    border: none;
-    background-color: #202020;
-    color: white;
-    text-shadow: #C4ACC9 1px 0 8px;
+#minusten {
+	text-align: center;
+	font-size: 48px;
+	width: 100px;
+	height: 80px;
+	margin-left: 1px;
+	border: none;
+	background-color: #202020;
+	color: white;
+	text-shadow: #c4acc9 1px 0 8px;
 }
 
 #reset {
-    margin-top:5px ;
-    text-align: center;
-    font-size: 26px;
-    width: 85px;
-    height: 30px;
+	margin-top: 5px;
+	text-align: center;
+	font-size: 26px;
+	width: 85px;
+	height: 30px;
 }
 
-#sourcecodelink{
-    margin-top: 24px;
-    text-decoration: underline;
-    color: whitesmoke;
+#sourcecodelink {
+	margin-top: 24px;
+	text-decoration: underline;
+	color: whitesmoke;
 }
 
-#sourcecodelink:hover{
-    text-decoration: underline;
-    color:var(--hover-color);
+#sourcecodelink:hover {
+	text-decoration: underline;
+	color: var(--hover-color);
 }
 
 .counterbutton {
-    
 }
