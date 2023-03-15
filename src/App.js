@@ -1,8 +1,12 @@
 import "./App.css";
 import { useState } from "react";
 
+import { useHotkeys } from "react-hotkeys-hook";
+
 export default function App() {
 	const [count, setCount] = useState(0);
+
+	useHotkeys('plus', () => plus());
 
 	const [plusStep, setPlusStep] = useState(1);
 
