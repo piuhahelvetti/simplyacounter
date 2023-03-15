@@ -1,20 +1,17 @@
 import "./App.css";
 import { useState } from "react";
-
-import { useHotkeys } from "react-hotkeys-hook";
-
-export default function App() {
+export default function App():JSX.Element {
 	const [count, setCount] = useState(0);
-
-	useHotkeys('plus', () => plus());
 
 	const [plusStep, setPlusStep] = useState(1);
 
 	const [minusStep, setMinusStep] = useState(1);
-
+	
 	window.onbeforeunload = function (event) {
+		if(count !== 0){
 		return window.confirm("Confirm refresh");
-	};
+	}
+};
 
 	function plus() {
 		setCount(count + plusStep);
@@ -61,12 +58,12 @@ export default function App() {
 	} //reset
 
 	function setCustomAmount() {
-		const rawCustomStart = prompt("Set a starting point");
-		const customStart = parseInt(rawCustomStart);
+		const customStart = parseInt(prompt("Enter custom starting point"));
 		console.log("Custom starting value entered:" + customStart);
-
 		if (isNaN(customStart)) {
 			console.log("ERROR: Please enter a number");
+			alert("Error: Please enter numeric a value!")
+			setCount(count)
 		} else {
 			setCount(customStart);
 			console.log(
