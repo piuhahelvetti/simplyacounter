@@ -9,6 +9,11 @@ export default function App():JSX.Element {
 
 	const [count, setCount] = useState(prevCount);
 
+	if(isNaN(prevCount)){
+		setCount(0);
+		localStorage.setItem("count", JSON.stringify(0));
+	}
+
 	window.onbeforeunload = function (event) {
 		if(count !== 0){
 		return window.confirm("Confirm refresh");
