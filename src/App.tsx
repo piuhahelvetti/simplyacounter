@@ -7,11 +7,10 @@ export default function App():JSX.Element {
 
 	const prevCount:number = parseInt(localStorage.getItem("count"));
 
-	const [count, setCount] = useState(prevCount);
 
-	if(isNaN(prevCount)){
-		setCount(0);
-		localStorage.setItem("count", JSON.stringify(0));
+	const [count, setCount] = useState(!isNaN(prevCount)? prevCount:0); //Checks if local storage value is NaN (Case in new browsers,  and sets initial state accordingly)
+	
+
 	}
 
 	window.onbeforeunload = function (event) {
@@ -23,37 +22,41 @@ export default function App():JSX.Element {
 	function plus() {
 		setCount(count + plusStep);
 		console.log("Added" + plusStep);
-		localStorage.setItem("count", JSON.stringify(count+plusStep));
+		updateLocalStorage(count+plusStep);
 	} //plusOne
 
 	function minus() {
 		setCount(count - minusStep);
 		console.log("Substracted" + minusStep);
-		localStorage.setItem("count", JSON.stringify(count-minusStep));
+
+		updateLocalStorage(count-minusStep);
 	} //plusOne
 
 	function plusFive() {
 		setCount(count + 5);
 		console.log("Added 5");
-		localStorage.setItem("count", JSON.stringify(count+5));
+		updateLocalStorage(count+5);
+
 	} //plusFive
 
 	function minusFive() {
 		setCount(count - 5);
 		console.log("Substracted 5");
-		localStorage.setItem("count", JSON.stringify(count-5));
+    
+		updateLocalStorage(count-5);
+
 	} //plusFive
 
 	function plusTen() {
 		setCount(count + 10);
 		console.log("Added 10");
-		localStorage.setItem("count", JSON.stringify(count+10));
+		updateLocalStorage(count+10);
 	} //plusFiTen
 
 	function minusTen() {
 		setCount(count - 10);
 		console.log("Added 10");
-		localStorage.setItem("count", JSON.stringify(count-10))
+		updateLocalStorage(count-10);
 	} //minusTen
 
 	function reset() {
@@ -64,7 +67,7 @@ export default function App():JSX.Element {
 			if (confirmReset === true) {
 				setCount(0);
 				console.log("Counter has been reset");
-				localStorage.setItem("count", JSON.stringify(0));
+				updateLocalStorage(0);
 			} else {
 				setCount(count);
 			} //setcount else
@@ -80,7 +83,7 @@ export default function App():JSX.Element {
 			setCount(count)
 		} else {
 			setCount(customStart);
-			localStorage.setItem("count", JSON.stringify(customStart))
+			updateLocalStorage(customStart);
 			console.log(
 				"Custom starting point set. Counter value is now " + customStart
 			);
@@ -117,7 +120,7 @@ export default function App():JSX.Element {
 				</button>
 				<button id="minusone" className="counterButton" onClick={minus}>
 					-
-				</button>{" "}
+				</button>
 				<br />
 			</div>
 			<div className="plusMinusFive">
@@ -139,18 +142,20 @@ export default function App():JSX.Element {
 			</div>
 			<button id="reset" onClick={reset}>
 				Reset
-			</button>{" "}
+			</button>
 			<br />
 			<button id="customstart" onClick={setCustomAmount}>
 				Set Custom Starting Amount
-			</button>{" "}
+			</button>
 			<br />
 			<button onClick={setPlusStepPrompt}>Set custom + step amount</button>
 			<button onClick={setMinusStepPrompt}>
 				Set custom - step amount
-			</button>{" "}
+			</button>
 			<br />
-			<a
+			<footer>
+				<h2>&copy; Leevi Saastamoinen 2022-{new Date().getFullYear()}</h2>
+				<a
 				id="sourcecodelink"
 				href="https://github.com/sapphirescarlett/simplyacounter"
 				target="__blank"
@@ -158,6 +163,8 @@ export default function App():JSX.Element {
 				Source code <br />
 				(GitHub)
 			</a>
+			</footer>
+
 		</div>
 	); // return
 } //App
