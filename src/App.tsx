@@ -1,6 +1,5 @@
 import "./App.css";
 import { useState } from "react";
-import { type } from "@testing-library/user-event/dist/type";
 export default function App():JSX.Element {
 	const [plusStep, setPlusStep] = useState(1);
 
