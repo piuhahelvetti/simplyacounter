@@ -7,10 +7,10 @@ export default function App():JSX.Element {
 
 	const prevCount:number = parseInt(localStorage.getItem("count"));
 
+
 	const [count, setCount] = useState(!isNaN(prevCount)? prevCount:0); //Checks if local storage value is NaN (Case in new browsers,  and sets initial state accordingly)
 	
-	function updateLocalStorage (newCount: any) {
-		localStorage.setItem("count", JSON.stringify(newCount))
+
 	}
 
 	window.onbeforeunload = function (event) {
@@ -28,6 +28,7 @@ export default function App():JSX.Element {
 	function minus() {
 		setCount(count - minusStep);
 		console.log("Substracted" + minusStep);
+
 		updateLocalStorage(count-minusStep);
 	} //plusOne
 
@@ -35,12 +36,15 @@ export default function App():JSX.Element {
 		setCount(count + 5);
 		console.log("Added 5");
 		updateLocalStorage(count+5);
+
 	} //plusFive
 
 	function minusFive() {
 		setCount(count - 5);
 		console.log("Substracted 5");
+    
 		updateLocalStorage(count-5);
+
 	} //plusFive
 
 	function plusTen() {
