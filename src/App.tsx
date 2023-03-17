@@ -1,5 +1,6 @@
 import "./App.css";
 import { useState } from "react";
+import { type } from "@testing-library/user-event/dist/type";
 export default function App():JSX.Element {
 	const [plusStep, setPlusStep] = useState(1);
 
@@ -9,15 +10,16 @@ export default function App():JSX.Element {
 
 
 	const [count, setCount] = useState(!isNaN(prevCount)? prevCount:0); //Checks if local storage value is NaN (Case in new browsers,  and sets initial state accordingly)
-	
-
-	}
 
 	window.onbeforeunload = function (event) {
 		if(count !== 0){
 		return window.confirm("Confirm refresh");
 	}
 };
+
+	function updateLocalStorage (newCount:number) {
+		localStorage.setItem("count", JSON.stringify(newCount));
+	}
 
 	function plus() {
 		setCount(count + plusStep);
