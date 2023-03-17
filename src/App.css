@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:regular);
+
 :root {
 	--hover-color: #e8a9ff;
 }
@@ -6,6 +8,9 @@ body {
 	background-color: #202020;
 	color: whitesmoke;
 	text-align: center;
+	width: 100%;
+	overflow-x: hidden;
+	overflow-y: scroll;
 }
 
 h1 {
@@ -116,5 +121,7 @@ h1 {
 	color: var(--hover-color);
 }
 
-.counterbutton {
+footer {
+	font-family: "Roboto", Arial;
+	font-size: 12px;
 }
