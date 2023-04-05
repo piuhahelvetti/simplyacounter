@@ -149,7 +149,7 @@ function resetAll () {
 	return (
 		<div className="App">
 			<h1>Counter</h1>
-			<h2 id="count">{count}</h2>
+			<h2 id="count" onClick={setCustomAmount}>{count}</h2>
 			<div className="plusMinusOne">
 				<button id="plusone" className="counterButton" onClick={plus}>
 					+
