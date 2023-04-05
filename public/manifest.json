@@ -1,5 +1,16 @@
 {
+  "name": "Simply A Counter",
+  "short_name": "Counter",
   "start_url": ".",
+  "icons": [
+    {
+      "src": "./favicon.ico",
+      "purpose": "maskable any",
+      "type": "image/svg+xml",
+      "sizes": "any"
+
+    }
+  ],
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff"
