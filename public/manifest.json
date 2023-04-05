@@ -1,5 +1,6 @@
 {
-  "name": "Keikkakoodi",
+  "name": "Simply A Counter",
+  "short_name": "Counter",
   "start_url": ".",
   "icons": [
     {
