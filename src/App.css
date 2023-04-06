@@ -1,11 +1,17 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto:regular);
+@import url(https://fonts.googleapis.com/css?family=Roboto:regular);/*Robot regular*/
 
 :root {
+
+	--background-color: #272727;
 	--hover-color: #e8a9ff;
+	--glow-color: #c4acc9 1px 0 8px;
+
 }
 
+
+
 body {
-	background-color: #202020;
+	background-color: var(--background-color);
 	color: whitesmoke;
 	text-align: center;
 	width: 100%;
@@ -39,9 +45,9 @@ h1 {
 	width: 100px;
 	height: 100px;
 	border: none;
-	background-color: #202020;
+	background-color:  var(--background-color);
 	color: white;
-	text-shadow: #c4acc9 1px 0 8px;
+	text-shadow: var(--glow-color);
 }
 
 #minusone {
@@ -51,7 +57,7 @@ h1 {
 	height: 100px;
 	margin-left: 1px;
 	border: none;
-	background-color: #202020;
+	background-color:  var(--background-color);
 	color: white;
 	text-shadow: #c4acc9 1px 0 8px;
 }
@@ -62,7 +68,7 @@ h1 {
 	width: 90px;
 	height: 80px;
 	border: none;
-	background-color: #202020;
+	background-color:  var(--background-color);
 	color: white;
 	text-shadow: #c4acc9 1px 0 8px;
 }
@@ -74,7 +80,7 @@ h1 {
 	height: 80px;
 	margin-left: 1px;
 	border: none;
-	background-color: #202020;
+	background-color:  var(--background-color);
 	color: white;
 	text-shadow: #c4acc9 1px 0 8px;
 }
@@ -85,7 +91,7 @@ h1 {
 	width: 100px;
 	height: 80px;
 	border: none;
-	background-color: #202020;
+	background-color:  var(--background-color);
 	color: white;
 	text-shadow: #c4acc9 1px 0 8px;
 }
@@ -97,17 +103,50 @@ h1 {
 	height: 80px;
 	margin-left: 1px;
 	border: none;
-	background-color: #202020;
+	background-color:  var(--background-color);
 	color: white;
 	text-shadow: #c4acc9 1px 0 8px;
 }
 
 #reset {
-	margin-top: 5px;
+
+	font-family: "Roboto";
 	text-align: center;
-	font-size: 26px;
-	width: 85px;
-	height: 30px;
+	font-size: 24px;
+	width: 80px;
+	height: 50px;
+	border: none;
+	background-color:  var(--background-color);
+	color: white;
+
+}
+
+#guideLink {
+	color: white;
+	text-decoration: underline;
+}
+
+#guidelink:hover {
+	color: var(--hover-color);
+}
+
+.customizeButton {
+
+	font-family: "Roboto";
+	text-align: center;
+	font-size: 18px;
+	width: 100px;
+	height: 50px;
+	border: none;
+	background-color:  var(--background-color);
+	color: white;
+
+}
+
+.customizeButton:hover {
+
+	text-shadow: #c4acc9 1px 0 8px;
+
 }
 
 #sourcecodelink {
@@ -119,6 +158,10 @@ h1 {
 #sourcecodelink:hover {
 	text-decoration: underline;
 	color: var(--hover-color);
+}
+
+.Instructions {
+	font-family: "Roboto";
 }
 
 footer {
