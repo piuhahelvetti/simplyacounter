@@ -1,4 +1,8 @@
 import { useEffect, useState } from "react";
+import Popup from "reactjs-popup";
+import "reactjs-popup/dist/index.css";
+
+import { SettingsIcon } from "./Icons/SettingsIcon";
 
 export default function HomePage(): JSX.Element {
 	const prevCount: number = parseInt(localStorage.getItem("count"));
@@ -28,12 +32,6 @@ export default function HomePage(): JSX.Element {
 		localStorage.setItem("minusStep", JSON.stringify(minusStep));
 	}, [minusStep]);
 
-	window.onbeforeunload = function (event) {
-		if (count !== 0) {
-			return window.confirm("Confirm refresh");
-		}
-	};
-
 	function updateCount(amount: number) {
 		setCount((currentCount) => {
 			return currentCount + amount;
@@ -50,9 +48,9 @@ export default function HomePage(): JSX.Element {
 				console.log("Counter has been reset");
 			}
 		}
-	} //reset
+	} //resetCount
 
-	function setCustomAmount() {
+	function setCustomCount() {
 		const customStart = parseInt(prompt("Enter custom starting point"));
 		console.log("Custom starting value entered:" + customStart);
 		if (isNaN(customStart)) {
@@ -119,15 +117,9 @@ export default function HomePage(): JSX.Element {
 
 	return (
 		<div className="Home">
-			<h2 id="count" onClick={setCustomAmount}>
-				{count}
-			</h2>
+			<h2 id="count">{count}</h2>
 
-			<button id="reset" onClick={resetCount}>
-				Reset
-			</button>
-
-			<div className="plusMinusOne">
+			<div className="plusMinus">
 				<button
 					id="plusone"
 					className="counterButton"
@@ -142,78 +134,50 @@ export default function HomePage(): JSX.Element {
 				>
 					-
 				</button>
-				<br />
-				<button className="customizeButton" onClick={setPlusStepPrompt}>
-					Customize step
-				</button>
-
-				<button className="customizeButton" onClick={setMinusStepPrompt}>
-					{" "}
-					Customize step
-				</button>
-				<br />
-				<button className="customizeButton" onClick={resetPlusStep}>
-					Reset step
-				</button>
-				<button className="customizeButton" onClick={resetMinusStep}>
-					Reset step
-				</button>
-				<br />
 			</div>
-			<div className="plusMinusFive">
-				<button
-					id="plusfive"
-					className="counterButton"
-					onClick={() => updateCount(5)}
-				>
-					+5
-				</button>
-
-				<button
-					id="minusfive"
-					className="counterButton"
-					onClick={() => updateCount(-5)}
-				>
-					-5
-				</button>
-			</div>
-			<div className="plusMinusTen">
-				<button
-					id="plusten"
-					className="counterButton"
-					onClick={() => updateCount(10)}
-				>
-					+10
-				</button>
-				<button
-					id="minusten"
-					className="counterButton"
-					onClick={() => updateCount(-10)}
-				>
-					-10
-				</button>
-			</div>
-
 			<br />
 
-			<a id="guideLink" href="/Instructions">
+			{/*<a id="guideLink" href="/Instructions">
 				Usage Guide
-			</a>
+			</a>*/}
 
 			<br />
-			<button
-				className="customizeButton"
-				style={{ width: "160px" }}
-				onClick={resetAll}
+			<Popup
+				trigger={
+					<button id="settingsTrigger">
+						<SettingsIcon />
+					</button>
+				}
+				position="bottom center"
+				contentStyle={{ width: "400px", backgroundColor:"#505050"}}
 			>
-				Reset everything
-			</button>
-			<br />
-			<footer>
-				<h2>&copy; Leevi Saastamoinen 2022-{new Date().getFullYear()}</h2>
+				<div className="settingsMenu" >
+					<h3 id="settingsTitle" style={{color:"white"}}>
+						{" "}
+						Settings{" "}
+					</h3>
+					<button onClick={resetCount}style={{color:"white"}}>Reset counter</button> <br />
+					<button onClick={setCustomCount} style={{ marginTop: "30px", color:"white"}}>
+						Set custom count
+					</button>
+					<br />
+					<button onClick={setPlusStepPrompt} style={{color:"white"}}>Set plus step</button> <br />
+					<button onClick={setMinusStepPrompt} style={{color:"white"}}>Set minus step</button> <br />
+					<button onClick={resetAll} style={{color:"white", marginBottom:"20px"}}>Reset to all values to default</button>
+					<br />
+					<a href="/" style={{ color: "white" }}>
+						Back to counter
+					</a> <br />
+					<footer style={{marginTop:"20px"}}>
+						<a href="/instructions" style={{color:"white"}}>About & Instructions</a>
+					</footer>
+				</div>
+			</Popup>
+			<footer id="footer">
+				<h2>&copy; Leevi Saastamoinen 2022 - {new Date().getFullYear()}</h2>
 				<a
 					id="sourcecodelink"
-					href="https://github.com/sapphirescarlett/simplyacounter"
+					href="https://github.com/piuhahelvetti/simplyacounter"
 					target="__blank"
 				>
 					Source code <br />
