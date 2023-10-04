@@ -144,32 +144,52 @@ export default function HomePage(): JSX.Element {
 			<br />
 			<Popup
 				trigger={
-					<button id="settingsTrigger">
+					<button id="settingsTrigger" aria-label="settings">
 						<SettingsIcon />
 					</button>
 				}
 				position="bottom center"
-				contentStyle={{ width: "400px", backgroundColor:"#505050"}}
+				contentStyle={{ width: "400px", backgroundColor: "#505050" }}
 			>
-				<div className="settingsMenu" >
-					<h3 id="settingsTitle" style={{color:"white"}}>
+				<div className="settingsMenu">
+					<h3 id="settingsTitle" style={{ color: "white" }}>
 						{" "}
 						Settings{" "}
 					</h3>
-					<button onClick={resetCount}style={{color:"white"}}>Reset counter</button> <br />
-					<button onClick={setCustomCount} style={{ marginTop: "30px", color:"white"}}>
+					<button onClick={resetCount} style={{ color: "white" }}>
+						Reset counter
+					</button>{" "}
+					<br />
+					<button
+						onClick={setCustomCount}
+						style={{ marginTop: "30px", color: "white" }}
+					>
 						Set custom count
 					</button>
 					<br />
-					<button onClick={setPlusStepPrompt} style={{color:"white"}}>Set plus step</button> <br />
-					<button onClick={setMinusStepPrompt} style={{color:"white"}}>Set minus step</button> <br />
-					<button onClick={resetAll} style={{color:"white", marginBottom:"20px"}}>Reset to all values to default</button>
+					<button onClick={setPlusStepPrompt} style={{ color: "white" }}>
+						Set plus step
+					</button>{" "}
+					<br />
+					<button onClick={setMinusStepPrompt} style={{ color: "white" }}>
+						Set minus step
+					</button>{" "}
+					<br />
+					<button
+						onClick={resetAll}
+						style={{ color: "white", marginBottom: "20px" }}
+					>
+						Reset to all values to default
+					</button>
 					<br />
 					<a href="/" style={{ color: "white" }}>
 						Back to counter
-					</a> <br />
-					<footer style={{marginTop:"20px"}}>
-						<a href="/instructions" style={{color:"white"}}>About & Instructions</a>
+					</a>{" "}
+					<br />
+					<footer style={{ marginTop: "20px" }}>
+						<a href="/instructions" style={{ color: "white" }}>
+							About & Instructions
+						</a>
 					</footer>
 				</div>
 			</Popup>
