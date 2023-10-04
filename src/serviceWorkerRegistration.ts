@@ -57,7 +57,12 @@ export function register(config?: Config) {
 			}
 		});
 	}
-}
+	window.addEventListener("activate", function (event) {
+		caches.keys().then(function (names) {
+			for (let name of names) caches.delete(name);
+		});
+	});
+} //register()
 
 function registerValidSW(swUrl: string, config?: Config) {
 	navigator.serviceWorker
